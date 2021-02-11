@@ -3,7 +3,8 @@ import Loading from "../components/loading/Loader.jsx";
 import SearchBar from "../components/SearchBar/SearchBar";
 import WeatherBody from "../components/WeatherBody/WeatherBody";
 export default function OverAll() {
-  let [loaded, ld] = useState(false);
+  const [loaded, ld] = useState(false);
+  const [city, ct] = useState("");
   useEffect(() => {
     update(615702);
   });
@@ -15,17 +16,18 @@ export default function OverAll() {
       })
       .then((r) => {
         console.log(r);
+        ct(r.title);
         ld(true);
       });
   }
   return (
     <div>
       {loaded ? null : <Loading />}
-      <React.Fragment>
-        <SearchBar city="koya" searchCity="none" />
-      </React.Fragment>
+
+      <SearchBar city="koya" searchCity="none" />
+
       <div className="weatherContainer">
-        <h5 className="cityName">koya</h5>
+        <h5 className="cityName">{city}</h5>
         <WeatherBody />
         <WeatherBody />
         <WeatherBody />
