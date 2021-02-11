@@ -1,13 +1,10 @@
 .Temp {
-  margin: 10px 0;
-  font-size: 14px;
-  color: #212529;
-}
-
-.Temp span {
-  margin: 0 3px;
+  margin: 10px 5;
+  font-size: 16px;
+  color: azure;
+  font-weight: 200;
 }
 
 .Temp .min {
-  font-weight: 800;
+  font-weight: 400;
 }
