@@ -51,6 +51,7 @@ export default function OverAll() {
             minTemp: r.consolidated_weather[i].min_temp.toFixed(1),
             maxTemp: r.consolidated_weather[i].max_temp.toFixed(1),
             icon: r.consolidated_weather[i].weather_state_abbr,
+            description: r.consolidated_weather[i].weather_state_name,
           });
         }
         ct(r.title);
@@ -75,13 +76,7 @@ export default function OverAll() {
       <div className="weatherContainer">
         <h5 className="cityName">{city}</h5>
         {days.map((day, i) => (
-          <WeatherBody
-            key={i}
-            day={day.day}
-            minTemp={day.minTemp}
-            maxTemp={day.maxTemp}
-            icon={days.icon}
-          />
+          <WeatherBody key={i} day={day} />
         ))}
       </div>
     </div>

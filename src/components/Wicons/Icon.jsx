@@ -1,43 +1,35 @@
 import React from "react";
-import cloudy from "../../assets/cloudy.svg";
-import Rain from "../../assets/rain.svg";
-import Snowing from "../../assets/snowing.svg";
-import Therometer from "../../assets/thermometer.svg";
 import "./Icon.css";
-
-import "./Icon.css";
+import c from "../../assets/logos/c.svg";
+import h from "../../assets/logos/h.svg";
+import hc from "../../assets/logos/hc.svg";
+import hr from "../../assets/logos/hr.svg";
+import lc from "../../assets/logos/lc.svg";
+import lr from "../../assets/logos/lr.svg";
+import s from "../../assets/logos/s.svg";
+import sl from "../../assets/logos/sl.svg";
+import sn from "../../assets/logos/sn.svg";
+import t from "../../assets/logos/t.svg";
 
 const Icon = (props) => {
-  switch (props.icon) {
-    case 801:
-      return <img className="icon" src={cloudy} alt={cloudy} />;
-    case 802:
-      return <img className="icon" src={cloudy} alt={cloudy} />;
-    case 803:
-      return <img className="icon" src={cloudy} alt={cloudy} />;
-
-    case 200:
-      return <img className="icon" src={Rain} alt={Rain} />;
-    case 201:
-      return <img className="icon" src={Rain} alt={Rain} />;
-    case 202:
-      return <img className="icon" src={Rain} alt={Rain} />;
-    case 600:
-      return <img className="icon" src={Snowing} alt={Snowing} />;
-    case 601:
-      return <img className="icon" src={Snowing} alt={Snowing} />;
-    case 602:
-      return <img className="icon" src={Snowing} alt={Snowing} />;
-    case 610:
-      return <img className="icon" src={Snowing} alt={Snowing} />;
-    default:
-      return (
-        <React.Fragment>
-          <img className="icon" src={Therometer} />
-          <h5>{props.description}</h5>
-        </React.Fragment>
-      );
-  }
+  const types = {
+    c: c,
+    h: h,
+    hc: hc,
+    hr: hr,
+    lc: lc,
+    lr: lr,
+    s: s,
+    sl: sl,
+    sn: sn,
+    t: t,
+  };
+  return (
+    <React.Fragment>
+      <img className="icon" src={types[props.icon]} alt="the_icon" />
+      <h5>{props.description}</h5>
+    </React.Fragment>
+  );
 };
 
 export default Icon;
