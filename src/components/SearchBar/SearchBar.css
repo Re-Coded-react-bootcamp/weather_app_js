@@ -1,19 +1,24 @@
 .SearchBar {
-  width: 100%;
-  height: 30vh;
+  width: 30% !important;
+  height: 100vh;
   text-align: center;
   background-image: url("https://images.unsplash.com/photo-1559060017-445fb9722f2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .SearchBar input {
-  border: 0;
+  border: 1px solid rgb(114, 110, 110);
   height: 38px;
-  margin-right: 15px;
+  outline: none;
   text-align: center;
+  font-weight: 650;
+  border-radius: 50px;
   border-bottom: 1px solid #17a2b8;
 }
 
@@ -21,20 +26,15 @@
   outline: 0;
 }
 
-.SearchBar .SearchChilds {
-  top: 50%;
-  left: 50%;
-  position: absolute;
-  transform: translate(-50%, -50%);
-}
-
-.SearchBar .SearchChilds .formSearchCity {
-  display: flex;
-}
-
 @media (min-width: 1399px) {
   .SearchBar {
     width: 30%;
     height: 100vh;
   }
+}
+.text-white {
+  color: white;
+  font-size: 1.7rem;
+  text-shadow: 2px 2px 5px black;
+  font-family: "El Messiri", sans-serif;
 }
