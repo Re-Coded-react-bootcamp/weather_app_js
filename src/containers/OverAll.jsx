@@ -9,6 +9,8 @@ export default function OverAll() {
   const [city, ct] = useState("");
   const [options, set_opt] = useState([]);
   const [input, inp] = useState("");
+  const [days, set_days] = useState([]);
+
   useEffect(() => {
     update(615702);
   }, []);
@@ -38,8 +40,23 @@ export default function OverAll() {
         return r.json();
       })
       .then((r) => {
+        var rozh = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+        let newy = [];
+        for (let i = 0; i < r.consolidated_weather.length; i++) {
+          newy.push({
+            day:
+              rozh[
+                new Date(r.consolidated_weather[i].applicable_date).getDay()
+              ],
+            minTemp: r.consolidated_weather[i].min_temp.toFixed(1),
+            maxTemp: r.consolidated_weather[i].max_temp.toFixed(1),
+            icon: r.consolidated_weather[i].weather_state_abbr,
+            description: r.consolidated_weather[i].weather_state_name,
+          });
+        }
         ct(r.title);
         inp("");
+        set_days(newy);
         ld(true);
       });
   }
@@ -58,11 +75,9 @@ export default function OverAll() {
 
       <div className="weatherContainer">
         <h5 className="cityName">{city}</h5>
-        <WeatherBody />
-        <WeatherBody />
-        <WeatherBody />
-        <WeatherBody />
-        <WeatherBody />
+        {days.map((day, i) => (
+          <WeatherBody key={i} day={day} />
+        ))}
       </div>
     </div>
   );
