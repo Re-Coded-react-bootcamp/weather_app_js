@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react"
 import CityInfo from "../../components/ProgressBar/CityInfo"
-import Spinner from "react-bootstrap/Spinner"
 import axios from "axios"
+import Spinner from "react-bootstrap/Spinner"
+import StatusBar from "./../../components/StatusBar/StatusBar"
 
 export default function WeatherData() {
 	const [currentWeth, setcurrentWeth] = useState()
@@ -11,7 +12,6 @@ export default function WeatherData() {
 
 	useEffect(() => {
 		function requestData() {
-			// setLoading(true)
 			try {
 				axios
 					.all([
@@ -33,6 +33,7 @@ export default function WeatherData() {
 		}
 		requestData()
 	}, [])
+	console.log(currentWeth)
 
 	if (loading) {
 		return (
@@ -45,6 +46,7 @@ export default function WeatherData() {
 	return (
 		<div>
 			{/* components come here */}
+			<StatusBar currentWeth={currentWeth} />
 			<CityInfo currentWeth={currentWeth} />
 		</div>
 	)
