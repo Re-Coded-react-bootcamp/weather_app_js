@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"
 import CityInfo from "../../components/ProgressBar/CityInfo"
+import Spinner from "react-bootstrap/Spinner"
 import axios from "axios"
 
 export default function WeatherData() {
@@ -10,7 +11,7 @@ export default function WeatherData() {
 
 	useEffect(() => {
 		function requestData() {
-			setLoading(true)
+			// setLoading(true)
 			try {
 				axios
 					.all([
@@ -24,6 +25,7 @@ export default function WeatherData() {
 					.then(([currentRes, foreCastRes]) => {
 						setcurrentWeth(currentRes.data)
 						setForcasttWeth(foreCastRes)
+						setLoading(false)
 					})
 			} catch (err) {
 				setError(err)
@@ -32,8 +34,13 @@ export default function WeatherData() {
 		requestData()
 	}, [])
 
-	if (!currentWeth) {
-		return null
+	if (loading) {
+		return (
+			<div>
+				<p>{error ? error : ""}</p>
+				<Spinner animation="border" variant="primary" />
+			</div>
+		)
 	}
 	return (
 		<div>
