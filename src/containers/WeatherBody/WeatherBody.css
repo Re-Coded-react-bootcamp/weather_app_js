@@ -1,6 +1,8 @@
 .weatherContainer {
   filter: progid:DXImageTransfrom.Microsoft.gradinet(starColorstr='#f99d95',endColorstr="#cf6367",GradientType=1);
   transition: 0.4s;
+  background-color: #000;
+
 }
 
 .weatherContainer {
