@@ -11,7 +11,7 @@ export default function OverAll() {
   const [input, inp] = useState("");
   const [days, set_days] = useState([]);
   const [image, set_img] = useState("");
-
+  const [grad, set_grad] = useState("");
   useEffect(() => {
     update(615702);
   }, []);
@@ -32,6 +32,29 @@ export default function OverAll() {
         set_opt(newy);
         lds(false);
       });
+  }
+
+  function hover(img) {
+    set_img(img);
+    switch (img) {
+      case "Clear" || "Light Cloud" || "Heavy Cloud":
+        set_grad(
+          "linear-gradient(  90deg, rgb(230, 157, 0) 20%, rgb(243, 191, 19) 50%, rgb(209, 136, 0) 100%)"
+        );
+        break;
+      case "Showers" || "Light Rain" || "Heavy Rain":
+        set_grad(
+          "linear-gradient(90deg,rgba(249, 157, 149, 1) 20%,rgba(218, 107, 115) 50%,rgba(207, 99, 103, 1) 100%)"
+        );
+        break;
+      case "Thunderstorm" || "Hail" || "Sleet" || "Snow":
+        set_grad(
+          "linear-gradient(  90deg, rgb(103, 243, 220) 20%,rgb(37, 207, 219) 50%,rgb(0, 158, 158) 100%)"
+        );
+        break;
+      default:
+        break;
+    }
   }
 
   function update(woeid) {
@@ -79,13 +102,18 @@ export default function OverAll() {
       <div
         className="weatherContainer"
         style={{
-          background:
-            "linear-gradient(90deg,rgba(249, 157, 149, 1) 20%,rgba(218, 107, 115, 1) 50%,rgba(207, 99, 103, 1) 100%)",
+          background: grad,
         }}
       >
         <h5 className="cityName">{city}</h5>
         {days.map((day, i) => (
-          <WeatherBody key={i} day={day} />
+          <WeatherBody
+            hovering={() => {
+              hover(day.description);
+            }}
+            key={i}
+            day={day}
+          />
         ))}
       </div>
     </div>
