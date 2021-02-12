@@ -36,23 +36,42 @@ export default function OverAll() {
 
   function hover(img) {
     set_img(img);
+    console.log(img);
     switch (img) {
-      case "Clear" || "Light Cloud" || "Heavy Cloud":
+      case "Clear":
         set_grad(
           "linear-gradient(  90deg, rgb(230, 157, 0) 20%, rgb(243, 191, 19) 50%, rgb(209, 136, 0) 100%)"
         );
         break;
-      case "Showers" || "Light Rain" || "Heavy Rain":
+      case "Light Cloud":
+        set_grad(
+          "linear-gradient(  90deg, rgb(230, 157, 0) 20%, rgb(243, 191, 19) 50%, rgb(209, 136, 0) 100%)"
+        );
+        break;
+      case "Heavy Cloud":
+        set_grad(
+          "linear-gradient(  90deg, rgb(230, 157, 0) 20%, rgb(243, 191, 19) 50%, rgb(209, 136, 0) 100%)"
+        );
+        break;
+      case "Showers":
         set_grad(
           "linear-gradient(90deg,rgba(249, 157, 149, 1) 20%,rgba(218, 107, 115) 50%,rgba(207, 99, 103, 1) 100%)"
         );
         break;
-      case "Thunderstorm" || "Hail" || "Sleet" || "Snow":
+      case "Light Rain":
         set_grad(
-          "linear-gradient(  90deg, rgb(103, 243, 220) 20%,rgb(37, 207, 219) 50%,rgb(0, 158, 158) 100%)"
+          "linear-gradient(90deg,rgba(249, 157, 149, 1) 20%,rgba(218, 107, 115) 50%,rgba(207, 99, 103, 1) 100%)"
+        );
+        break;
+      case "Heavy Rain":
+        set_grad(
+          "linear-gradient(90deg,rgba(249, 157, 149, 1) 20%,rgba(218, 107, 115) 50%,rgba(207, 99, 103, 1) 100%)"
         );
         break;
       default:
+        set_grad(
+          "linear-gradient(  90deg, rgb(103, 243, 220) 20%,rgb(37, 207, 219) 50%,rgb(0, 158, 158) 100%)"
+        );
         break;
     }
   }
@@ -99,10 +118,7 @@ export default function OverAll() {
         inp={inp}
       />
 
-      <div
-        className="weatherContainer"
-   
-      >
+      <div className="weatherContainer" style={{ background: grad }}>
         <h5 className="cityName">{city}</h5>
         {days.map((day, i) => (
           <WeatherBody
