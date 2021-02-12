@@ -1,15 +1,16 @@
 .icon {
-  width: 40px;
-  margin-left: 20px;
-  margin-bottom: 20px;
+  width: 55px;
+  margin: 0px auto;
 }
 
 .desc {
-  font-size: 14px;
+  font-size: 18px;
   color: aliceblue;
-  font-weight: 900;
-  width: 100%;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  white-space: pre;
+  font-weight: 700;
+  font-family: "El Messiri", sans-serif;
+  text-shadow: 1px 1px 3px rgb(78, 76, 76);
+  margin-block-start: 10px !important;
+  margin-block-end: 10px !important;
+  margin-inline-start: 0px !important;
+  margin-inline-end: 0px !important;
 }

@@ -73,7 +73,13 @@ export default function OverAll() {
         inp={inp}
       />
 
-      <div className="weatherContainer">
+      <div
+        className="weatherContainer"
+        style={{
+          background:
+            "linear-gradient(90deg,rgba(249, 157, 149, 1) 20%,rgba(218, 107, 115, 1) 50%,rgba(207, 99, 103, 1) 100%)",
+        }}
+      >
         <h5 className="cityName">{city}</h5>
         {days.map((day, i) => (
           <WeatherBody key={i} day={day} />
