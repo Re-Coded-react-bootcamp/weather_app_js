@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Loading from "../components/loading/Loader.jsx";
 import SearchBar from "../components/SearchBar/SearchBar";
-import WeatherBody from "../components/WeatherBody/WeatherBody";
+import WeatherBody from "./WeatherBody/WeatherBody";
 
 export default function OverAll() {
   const [loaded, ld] = useState(false);

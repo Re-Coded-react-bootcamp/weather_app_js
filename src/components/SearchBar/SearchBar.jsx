@@ -18,7 +18,7 @@ export default function SearchBar(props) {
           autoComplete="false"
           placeholder="Search"
         />
-        <div className="options">
+        <div className="options" id="style-1">
           {props.input !== "" ? (
             props.show_lds ? (
               <div className="smallld">Loading...</div>
