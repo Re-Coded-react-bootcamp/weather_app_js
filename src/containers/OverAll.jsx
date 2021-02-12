@@ -36,7 +36,6 @@ export default function OverAll() {
 
   function hover(img) {
     set_img(img);
-    console.log(img);
     switch (img) {
       case "Clear":
         set_grad(
