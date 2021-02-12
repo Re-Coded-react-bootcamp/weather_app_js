@@ -10,6 +10,7 @@ export default function OverAll() {
   const [options, set_opt] = useState([]);
   const [input, inp] = useState("");
   const [days, set_days] = useState([]);
+  const [image, set_img] = useState("");
 
   useEffect(() => {
     update(615702);
@@ -57,6 +58,7 @@ export default function OverAll() {
         ct(r.title);
         inp("");
         set_days(newy);
+        set_img(newy[0].description);
         ld(true);
       });
   }
@@ -65,6 +67,7 @@ export default function OverAll() {
       {loaded ? null : <Loading />}
 
       <SearchBar
+        image={image}
         inchanged={changed}
         show_lds={show_lds}
         city_opt={options}

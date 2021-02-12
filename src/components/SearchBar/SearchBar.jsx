@@ -1,12 +1,36 @@
 import "./SearchBar.css";
+
 import Option from "../option/Option";
 
+import Snow from "../../assets/images/Snow.jpg";
+import Sleet from "../../assets/images/Sleet.jpg";
+import Hail from "../../assets/images/Hail.jpg";
+import Thunderstorm from "../../assets/images/Thunderstorm.jpg";
+import HeavyRain from "../../assets/images/HeavyRain.jpg";
+import LightRain from "../../assets/images/LightRain.jpg";
+import Showers from "../../assets/images/Showers.jpg";
+import HeavyCloud from "../../assets/images/HeavyCloud.jpg";
+import LightCloud from "../../assets/images/LightCloud.jpeg";
+import Clear from "../../assets/images/Clear.jpg";
+
 export default function SearchBar(props) {
+  const images = {
+    Snow: Snow,
+    Sleet: Sleet,
+    Hail: Hail,
+    Thunderstorm: Thunderstorm,
+    "Heavy Rain": HeavyRain,
+    "Light Rain": LightRain,
+    Showers: Showers,
+    "Heavy Cloud": HeavyCloud,
+    "Light Cloud": LightCloud,
+    Clear: Clear,
+  };
   return (
     <div
       className="SearchBar"
       style={{
-        backgroundImage: `url(https://images.unsplash.com/photo-1559060017-445fb9722f2a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80)`,
+        backgroundImage: `url(${images[props.image]})`,
       }}
     >
       <div className="SearchChilds">
