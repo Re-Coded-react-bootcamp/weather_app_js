@@ -101,9 +101,7 @@ export default function OverAll() {
 
       <div
         className="weatherContainer"
-        style={{
-          background: grad,
-        }}
+   
       >
         <h5 className="cityName">{city}</h5>
         {days.map((day, i) => (
