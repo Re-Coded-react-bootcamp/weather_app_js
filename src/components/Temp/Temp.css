@@ -1,0 +1,10 @@
+.Temp {
+  margin: 10px 5;
+  font-size: 16px;
+  color: azure;
+  font-weight: 200;
+}
+
+.Temp .min {
+  font-weight: 400;
+}
