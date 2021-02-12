@@ -100,7 +100,7 @@ export default function OverAll() {
         ct(r.title);
         inp("");
         set_days(newy);
-        set_img(newy[0].description);
+        hover(newy[0].description);
         ld(true);
       });
   }
